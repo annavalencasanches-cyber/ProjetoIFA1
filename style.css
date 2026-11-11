@@ -1,1 +1,31 @@
+/* Estilos Customizados Adicionais */
 
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Transição suave de input range */
+input[type=range] {
+    transition: background 0.3s ease;
+}
+
+/* Animação simples de pulso no console */
+@keyframes pulse-light {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-light 2s infinite ease-in-out;
+}
