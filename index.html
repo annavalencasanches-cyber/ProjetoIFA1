@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Interdisciplinar: Termodinâmica & Automação de Piscinas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
 
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-[#00d2ff] fa-temperature-arrow-down text-2xl text-cyan-400"></i>
+                <span class="font-bold text-lg text-white">TermoPool <span class="text-xs px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Interdisciplinar</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#fisica" class="hover:text-cyan-400 transition-colors">Física & Tecnociência</a>
+                <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
+                <a href="#robotica" class="hover:text-cyan-400 transition-colors">Robótica & Programação</a>
+                <a href="#quiz" class="hover:text-cyan-400 transition-colors">Quiz</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-16 px-4 text-center border-b border-slate-800">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="inline-block bg-cyan-500/10 text-cyan-400 text-xs font-semibold px-3 py-1 rounded-full border border-cyan-500/20">Projeto de Feira de Ciências</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                Radiação Infravermelha & Perda Térmica em Piscinas
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+                Integração interdisciplinar combinando conceitos fundamentais da **Física**, modelagem matemática em **Programação** e automação com **Robótica (IoT)**.
+            </p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16 flex-grow">
+
+        <!-- SEÇÃO 1: FÍSICA E TECNOCIÊNCIA -->
+        <section id="fisica" class="space-y-6">
+            <div class="border-l-4 border-cyan-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">1. Física & Tecnociência</h2>
+                <p class="text-slate-400 text-sm">Entenda como o calor escapa da piscina através das 4 formas principais de transferência térmica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-cyan-500/50 transition">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-4">
+                        <i class="fa-solid fa-wave-square text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Radiação Infravermelha</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Qualquer corpo acima do zero absoluto emite ondas eletromagnéticas. A água aquecida emite radiação IV continuamente para a atmosfera, independente de haver vento ou contato físico.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-blue-500/50 transition">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4">
+                        <i class="fa-solid fa-droplet text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Evaporação (~70%)</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Moléculas de maior energia cinética escapam para o estado gasoso, levando consigo grande quantidade de calor (calor latente de vaporização). É a principal fonte de perda térmica.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-emerald-500/50 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <i class="fa-solid fa-wind text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Convecção</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Troca de calor com o ar circundante. O ar frio aquecido pela água se torna menos denso e sobe (convecção natural), processo acelerado exponencialmente com vento (convecção forçada).
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-amber-500/50 transition">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Condução</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Transferência direta de calor por contato físico entre a água e o revestimento da piscina/solo. Geralmente representa a menor fatia das perdas térmicas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bloco Equação Stefan-Boltzmann -->
+            <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 max-w-xl">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-square-root-variable text-cyan-400"></i> Lei de Stefan-Boltzmann
+                    </h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Determina a potência emitida por radiação. A dependência com a temperatura em Kelvin à quarta potência ($\text{T}^4$) faz com que pequenas variações térmicas causem grandes alterações na perda radiativa.
+                    </p>
+                </div>
+                <div class="bg-slate-900 border border-slate-700 p-4 rounded-lg text-center font-mono text-cyan-300 font-bold text-lg min-w-[240px]">
+                    $$P = \varepsilon \cdot \sigma \cdot A \cdot T^4$$
+                    <span class="block text-[10px] text-slate-400 mt-1 font-sans">$\sigma = 5.67 \times 10^{-8} \, \text{W}/(\text{m}^2\text{K}^4)$</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: PROGRAMAÇÃO & SIMULADOR -->
+        <section id="simulador" class="space-y-6">
+            <div class="border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">2. Programação: Simulador Térmico em Tempo Real</h2>
+                <p class="text-slate-400 text-sm">Ajuste os parâmetros físicos para calcular a dissipação de energia e a eficácia de uma capa térmica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Painel de Controles -->
+                <div class="lg:col-span-5 bg-slate-800/60 border border-slate-700 p-6 rounded-xl space-y-5">
+                    <h3 class="text-base font-semibold text-white border-b border-slate-700 pb-3 flex items-center justify-between">
+                        <span><i class="fa-solid fa-sliders text-indigo-400 mr-2"></i> Parâmetros Ambientais</span>
+                        <button id="reset-params" class="text-xs text-slate-400 hover:text-white"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    </h3>
+
+                    <!-- Sliders -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-slate-300">Temp. da Água ($T_{água}$)</span>
+                                <span id="v-tagua" class="font-mono text-cyan-400 font-bold">28 °C</span>
+                            </div>
+                            <input type="range" id="t-agua" min="15" max="40" value="28" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-slate-300">Temp. Ambiente ($T_{ar}$)</span>
+                                <span id="v-tar" class="font-mono text-cyan-400 font-bold">18 °C</span>
+                            </div>
+                            <input type="range" id="t-ar" min="5" max="35" value="18" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-slate-300">Área da Piscina ($A$)</span>
+                                <span id="v-area" class="font-mono text-cyan-400 font-bold">32 m²</span>
+                            </div>
+                            <input type="range" id="area" min="10" max="100" value="32" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-slate-300">Velocidade do Vento</span>
+                                <span id="v-vento" class="font-mono text-cyan-400 font-bold">2.0 m/s</span>
+                            </div>
+                            <input type="range" id="vento" min="0" max="10" step="0.5" value="2" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                        </div>
+
+                        <!-- Toggle Capa -->
+                        <div class="pt-2 flex items-center justify-between border-t border-slate-700/60">
+                            <span class="text-xs text-slate-300 font-medium">Uso de Capa Térmica:</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="capa-toggle" class="sr-only peer">
+                                <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Saída -->
+                    <div class="grid grid-cols-2 gap-3 pt-3">
+                        <div class="bg-slate-900/80 border border-slate-700/80 p-3 rounded-lg text-center">
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider">Perda Total</span>
+                            <span id="res-perda-total" class="text-lg font-bold font-mono text-rose-400">0.0 kW</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-700/80 p-3 rounded-lg text-center">
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider">Economia (Capa)</span>
+                            <span id="res-economia" class="text-lg font-bold font-mono text-emerald-400">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Resultados -->
+                <div class="lg:col-span-7 bg-slate-800/60 border border-slate-700 p-6 rounded-xl flex flex-col justify-between">
+                    <h3 class="text-base font-semibold text-white mb-4">
+                        <i class="fa-solid fa-chart-pie text-indigo-400 mr-2"></i> Distribuição das Perdas de Energia (kW)
+                    </h3>
+                    <div class="relative w-full h-64 flex justify-center items-center">
+                        <canvas id="chartPerdas"></canvas>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-4 text-center">
+                        * O modelo computacional calcula instantaneamente as perdas relativas baseando-se em coeficientes empíricos de evaporação, convecção e radiação infravermelha.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: ROBÓTICA & AUTOMAÇÃO -->
+        <section id="robotica" class="space-y-6">
+            <div class="border-l-4 border-emerald-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">3. Robótica: Sistema Automático IoT para Capa Térmica</h2>
+                <p class="text-slate-400 text-sm">Projeto de protótipo microcontrolado (ESP32 / Arduino) com sensores de infravermelho e atuador motorizado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Diagrama do Circuito & Esquema -->
+                <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-xl space-y-4">
+                    <h3 class="text-base font-semibold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-emerald-400"></i> Diagrama do Hardware Embarcado
+                    </h3>
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <div class="flex items-start gap-3 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50">
+                            <i class="fa-solid fa-temperature-high text-cyan-400 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white">Sensor MLX90614 (Infravermelho Termopilha):</strong>
+                                <p class="text-slate-400">Mede a temperatura da água da piscina sem contato direto, captando a radiação IV emitida pela superfície.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50">
+                            <i class="fa-solid fa-gear text-emerald-400 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white">Micro-servomotor / Ponte H & Motor DC:</strong>
+                                <p class="text-slate-400">Responsável pelo enrolamento e desenrolamento automatizado da capa térmica flutuante.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50">
+                            <i class="fa-solid fa-wifi text-indigo-400 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white">Microcontrolador ESP32:</strong>
+                                <p class="text-slate-400">Processa as equações de transferência de calor e toma a decisão autônoma de cobrir a piscina à noite ou em temperaturas baixas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulação de Telemetria IoT -->
+                    <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center text-slate-400 border-b border-slate-800 pb-2">
+                            <span><i class="fa-solid fa-terminal text-emerald-500 mr-1"></i> Console do Bot IoT</span>
+                            <span id="iot-status" class="px-2 py-0.5 rounded text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800">ONLINE</span>
+                        </div>
+                        <div id="iot-log" class="h-24 overflow-y-auto space-y-1 text-slate-300 text-[11px]">
+                            <p class="text-slate-500">[SYSTEM] Inicializando sensores I2C...</p>
+                            <p class="text-slate-500">[MLX90614] Sensor de radiação IV pronto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código do Microcontrolador -->
+                <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-xl flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-base font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-code text-emerald-400"></i> Código C++ (Arduino/ESP32)
+                        </h3>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 px-2 py-0.5 rounded">firmware.ino</span>
+                    </div>
+                    <pre class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 overflow-x-auto flex-grow border border-slate-800"><code><span class="text-purple-400">#include</span> <span class="text-emerald-300">&lt;Wire.h&gt;</span>
+<span class="text-purple-400">#include</span> <span class="text-emerald-300">&lt;Adafruit_MLX90614.h&gt;</span>
+
+Adafruit_MLX90614 mlx = Adafruit_MLX90614();
+<span class="text-purple-400">const int</span> PIN_MOTOR_FECHAR = <span class="text-amber-300">18</span>;
+<span class="text-purple-400">const int</span> PIN_MOTOR_ABRIR = <span class="text-amber-300">19</span>;
+
+<span class="text-purple-400">void</span> <span class="text-blue-400">setup</span>() {
+  Serial.<span class="text-blue-300">begin</span>(<span class="text-amber-300">115200</span>);
+  mlx.<span class="text-blue-300">begin</span>();
+  pinMode(PIN_MOTOR_FECHAR, OUTPUT);
+  pinMode(PIN_MOTOR_ABRIR, OUTPUT);
+}
+
+<span class="text-purple-400">void</span> <span class="text-blue-400">loop</span>() {
+  <span class="text-purple-400">float</span> tAgua = mlx.<span class="text-blue-300">readMetaObjectTempC</span>();
+  <span class="text-purple-400">float</span> tAmb = mlx.<span class="text-blue-300">readAmbientTempC</span>();
+
+  <span class="text-slate-500">// Se a perda por radiação/evaporação for crítica</span>
+  <span class="text-purple-400">if</span> ((tAgua - tAmb) &gt; <span class="text-amber-300">5.0</span>) {
+    <span class="text-slate-500">// Aciona motor para cobrir a piscina</span>
+    digitalWrite(PIN_MOTOR_FECHAR, HIGH);
+    Serial.<span class="text-blue-300">println</span>(<span class="text-emerald-300">"Alerta: Perda térmica alta! Fechando capa."</span>);
+  }
+  delay(<span class="text-amber-300">5000</span>);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: QUIZ INTERATIVO -->
+        <section id="quiz" class="space-y-6">
+            <div class="border-l-4 border-amber-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">4. Quiz Interativo de Conhecimento</h2>
+                <p class="text-slate-400 text-sm">Teste o que você aprendeu sobre física de piscinas e automação.</p>
+            </div>
+
+            <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-xl max-w-3xl mx-auto space-y-6">
+                <div id="quiz-container">
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
+                        <span id="quiz-step">Pergunta 1 de 3</span>
+                        <span id="quiz-score" class="font-bold text-cyan-400">Pontuação: 0</span>
+                    </div>
+                    <h3 id="quiz-question" class="text-lg font-medium text-white mb-4">Carregando pergunta...</h3>
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Opções injetadas pelo JS -->
+                    </div>
+                </div>
+
+                <div id="quiz-feedback" class="hidden p-4 rounded-lg text-sm text-center"></div>
+
+                <div class="flex justify-end">
+                    <button id="btn-next-quiz" class="hidden px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white font-medium rounded-lg text-xs transition">Próxima Pergunta</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            Projeto Interdisciplinar • Física & Tecnociência, Programação e Robótica • 2026
+        </div>
+    </footer>
+
+    <!-- Script Principal -->
+    <script src="script.js"></script>
+</body>
+</html>
